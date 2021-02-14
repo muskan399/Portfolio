@@ -11,6 +11,9 @@ import 'package:portfolio/page3.dart';
 import 'package:portfolio/page4.dart';
 import 'package:portfolio/page5.dart';
 var animation,a;
+AnimationController _controller,_controller2,_controller3;
+  var animation2,animation3;
+
 List <Widget> l=[];
 var controller=PageController(
   initialPage: 0,
@@ -26,9 +29,7 @@ class Change_Info extends StatefulWidget {
 
 class _Change_InfoState extends State<Change_Info>
     with TickerProviderStateMixin {
-  AnimationController _controller,_controller2,_controller3;
-  var animation,animation2,animation3;
-
+  
   @override
   void initState() {
     super.initState();
@@ -57,6 +58,37 @@ class _Change_InfoState extends State<Change_Info>
   @override
   Widget build(BuildContext context) {
     l.clear();
+      for(var i=0;i<60;i++)
+    {
+        l.add(Positioned(
+          top: 1000.0*Random().nextDouble(),
+          left: 1500.0*Random().nextDouble(),
+          child: RotationTransition(
+            turns: animation,
+            child: InkWell(
+              onTap: (){},
+              onHover: (k)
+              {
+                if(k==true){
+                setState(() {
+                _controller.forward(from: 0.5);
+               // print("CLickeddddddddddddd");
+                });
+              }},
+                          child: Container(
+                  child: Opacity(
+                      opacity: animation.value+0.3,
+                      child: Icon(
+                     
+                      Icons.star,
+                       color: Colors.white,
+                      size: 20*Random().nextDouble()+(animation.value*10),
+                      ),
+                  )),
+            ),
+            ),
+          ));
+    }
      
     return Scaffold(
       backgroundColor: Colors.black,
