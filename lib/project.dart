@@ -36,7 +36,7 @@ class _projectState extends State<project> {
               widget.project_name,
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: 50 * (MediaQuery.of(context).size.width) / 1500,
+                  fontSize: 40 * (MediaQuery.of(context).size.width) / 1500,
                   fontWeight: FontWeight.w900),
             ),
           ),
@@ -71,7 +71,7 @@ class _projectState extends State<project> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               InkWell(
-                  onTap: () async{
+                  onTap: () async {
                     await launch(widget.project_linkedin);
                   },
                   child: CircleAvatar(
@@ -79,7 +79,7 @@ class _projectState extends State<project> {
                   )),
               SizedBox(width: 6),
               InkWell(
-                  onTap: () async{
+                  onTap: () async {
                     await launch(widget.project_github);
                   },
                   child: CircleAvatar(
