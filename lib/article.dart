@@ -16,11 +16,11 @@ class _articleState extends State<article> {
         launch(widget.article_link);
       },
           child: Container(
-            width: 600,
+           // width: 600,
            // height: 600,
             //padding: EdgeInsets.all(20),
             margin: EdgeInsets.all(10),
-decoration: BoxDecoration(color: Colors.purple[100],borderRadius: BorderRadius.circular(20)),
+            decoration: BoxDecoration(color: Colors.purple[100],borderRadius: BorderRadius.circular(20)),
         child: Column(children: [
           Container(
             margin: EdgeInsets.all(10),

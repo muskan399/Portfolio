@@ -4,8 +4,10 @@ import 'dart:math';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/appbar.dart';
+import 'package:portfolio/navbar.dart';
+import 'package:portfolio/drawer.dart';
 import 'package:portfolio/page1.dart';
+//import 'package:portfolio/page1.dartddd';
 import 'package:portfolio/page2.dart';
 import 'package:portfolio/page3.dart';
 import 'package:portfolio/page4.dart';
@@ -51,8 +53,9 @@ class _Change_InfoState extends State<Change_Info>
   
   @override
   void dispose() {
-    super.dispose();
+   
     _controller.dispose();
+     super.dispose();
   }
  
   @override
@@ -92,7 +95,9 @@ class _Change_InfoState extends State<Change_Info>
      
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: navbar(),
+      
+      appBar: MediaQuery.of(context).size.width>=900?navbar():AppBar(),
+      drawer: MediaQuery.of(context).size.width<900?drawer():null,
       body: PageView(
         controller: controller,
         scrollDirection: Axis.vertical,

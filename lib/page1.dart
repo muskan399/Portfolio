@@ -1,105 +1,146 @@
-     
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/material.dart';
+import 'package:portfolio/MyHomePage.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-     import 'package:flutter/material.dart';
-     import 'package:portfolio/MyHomePage.dart';
+class page1 extends StatefulWidget {
+  @override
+  _page1State createState() => _page1State();
+}
 
-Stack page1(){
-      return Stack(
-              children : [
-                                          
+class _page1State extends State<page1> {
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+          child: Container(
 
-                for (var i in l)
-                i,
-                Center(
-                  child: Center(
-                    
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                            width: 700,
-                            height: 300,
-                            color: Colors.deepPurple[900],
-                            child: Column(
-                              children: [
-                                 Row(
-                                   children: [
+        child: Stack(children: [
+          for (var i in l)
+          i,
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+        
+              children: [
+                   // SizedBox(height: 100,),
+                Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
 
-                                     Container(
-                                       margin: EdgeInsets.all(20),
-                                       child: RichText(
-                                         text: TextSpan(
-                                           text: "Hi everyone,",style: TextStyle(fontSize: 42,color: Colors.white),
-                                           children: [
-                                             TextSpan(text: "I'm Muskan", style: TextStyle(
-                                               color: Colors.white
-                                             )),
-                                            
-                                           ]
+  Container(
+             // color: Colors.yellow,
+             // margin: EdgeInsets.all(50),
+             padding: EdgeInsets.all(10),
+              width: 700,
+              alignment: Alignment.center,
+              child: Column(
+                  children: [
+                     Row(
+                       children: [
+                         Container(
+                     child: RichText(
+             text: TextSpan(
+               text: "Hi everyone,",style: TextStyle(fontSize: 42*MediaQuery.of(context).size.width/1500,color: Colors.white),
+               children: [
+                   TextSpan(text: "I'm Muskan", style: TextStyle(
+                     color: Colors.white
+                   )),
+                  
+               ]
+             
+               
+        
+             ),
+                   )
+                     ,),
+                     Container(
+                 height: 60,
+                 width: 60,
+                 child: Image.network("https://raw.githubusercontent.com/muskan399/first/master/hiii.gif")
+                 )
+                       ],
+                     ),
+                     Container(
+                       padding: EdgeInsets.all(10),
+                       child: Text("I'm currently pursuing B.Tech. Computer Science with Specialization in Cloud Computing & Virtualization Technology from the University of Petroleum and Energy Studies. I'm more inclined towards Cloud(AWS, OpenStack, GCP) and DevOps. I have worked with Redhat Ansible and OpenShift. Along with this, I have a great interest in Containerization technology. I have created projects using AWS EKS, Openstack Magnum, and Kubernetes. ",
+                         style: TextStyle(fontSize: 22,
+                         color: Colors.white
+                         ),
+                         
+                         ),
+                     ),
+                     SizedBox(height: 10,),
+                     Row(
+                       children: [
+                         InkWell(
+                           onTap: (){launch("https://drive.google.com/file/d/1if_qWjtqMjRJapbkahy4FUqP8HoGsjH-/view?usp=sharing");},
                                          
-                                           
+                                                    child: Container(margin: EdgeInsets.all(20),
+                           padding: EdgeInsets.all(20),
+                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.purple),
+                           child: Text("See Resume")
+                           ,),
+                         ),
+                         InkWell(
+                          onTap: (){launch("https://github.com/dashboard");},
+                           child: CircleAvatar(backgroundImage: AssetImage("images/GitHub-Mark.png"),)),
+                           SizedBox(width: 10),
+                           InkWell(
+        onTap: (){launch("https://www.linkedin.com/in/muskan-modi-46b3751a7/");},
+                           child: CircleAvatar(backgroundImage: AssetImage("images/LinkedIn-Logo.png"),)),
+                       ],
+                     )
+                  ]
+                ),
+                
+
             
-                                         ),
-                                       )
-                                       ,),
-                                       Container(
-                                         height: 60,
-                                         width: 60,
-                                         child: Image.network("https://raw.githubusercontent.com/muskan399/first/master/hiii.gif"))
-                                   ],
-                                 ),
-                                 Container(
-                                   padding: EdgeInsets.all(20),
-                                   child: Text("A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks.",
-                                   style: TextStyle(fontSize: 22,
-                                   color: Colors.white
-                                   ),
-                                   
-                                   ),
-                                 )
-                              ]
-                            ),
-                            ),
-                         /* Container(
-                            color: Colors.pink[100],
-                            height: 400,
-                            width: 400,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                CircleAvatar(
-                                  radius: 100,
-                                  backgroundColor: Colors.transparent,
-                    backgroundImage: NetworkImage("https://raw.githubusercontent.com/muskan399/first/master/382701_352_canny_pic.jpg",
-       ),
-                                ),
-                                SizedBox(
-                                  height: 40
-                                ),
-                                
-                                TypewriterAnimatedTextKit(
+              ),
+              SizedBox(width: 30),
+                
+                   Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: [
+               Container(
+              //   color: Colors.red,
+                // padding: EdgeInsets.all(70),
+                 child: CircleAvatar(
+                   radius: 150,
+                   backgroundColor: Colors.transparent,
+                  backgroundImage: AssetImage("images/sleepygirl.gif"),
+                  
+                   ),
+               ),
+               
+               SizedBox(
+                 height: 20
+               ),
+               
+               TypewriterAnimatedTextKit(
   speed: Duration(milliseconds: 100),
   totalRepeatCount: 4,
-  text: ["I'm a developer", "I'm a cloud enthusisath", "I'm freaked out about Automation", "I'm interested in containerizarion technologies"],
+  text: ["I'm a developer", "I'm a Cloud Enthusisat", "I'm currently exploring DevOps tools","I have quite a interest in automation"],
   textStyle: TextStyle(
-    color: Colors.black,
-    fontSize: 20.0, fontWeight: FontWeight.bold),
+      color: Colors.pink[100],
+      fontSize: 20.0, fontWeight: FontWeight.bold),
   pause: Duration(milliseconds: 100),
   displayFullTextOnTap: true,
   stopPauseOnTap: true,
 ),
-Image.network("http://cdn.lowgif.com/full/23362f46b731f500-hand-waving-goodbye-clipart-cliparthut-free-clipart.gif")
-                              
-                              ],
-                            ),
-                          ),*/
-                          Container(
-                            height: 400,
-                            width: 300,
-                            child: Image.network("http://cdn.lowgif.com/full/23362f46b731f500-hand-waving-goodbye-clipart-cliparthut-free-clipart.gif"))
-                        ],
-                      )),
-                ),
-          ]
-      );
-     }
+
+                   
+                   ]
+                   )
+                  ]),
+              ],
+            ),
+          )
+        ]
+        
+                         )
+                         ),
+    );
+  }
+        
+}
