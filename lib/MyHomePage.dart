@@ -46,12 +46,11 @@ class _Change_InfoState extends State<Change_Info>
     );
     animation2 = CurvedAnimation(parent: _controller2, curve: Curves.easeIn);
     animation3 = CurvedAnimation(parent: _controller3, curve: Curves.easeIn);
-
-    if (a == 1)
-      _controller.forward(from: 0.5);
-    else if (a == 2)
-      _controller2.forward(from: 0.5);
-    else if (a == 3) _controller3.forward(from: 0.5);
+    animation.addListener(() {
+      setState(() {
+        animation.value;
+      });
+    });
   }
 
   @override
@@ -81,7 +80,7 @@ class _Change_InfoState extends State<Change_Info>
             },
             child: Container(
                 child: Opacity(
-              opacity: animation.value + 0.3,
+              opacity: (animation.value*Random().nextDouble()+0.6)/2,
               child: Icon(
                 Icons.star,
                 color: Colors.white,

@@ -11,6 +11,7 @@ class page1 extends StatefulWidget {
 class _page1State extends State<page1> {
   @override
   Widget build(BuildContext context) {
+    
     return SingleChildScrollView(
       child: Container(
           child: Stack(children: [
@@ -25,7 +26,7 @@ class _page1State extends State<page1> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
-                      // color: Colors.yellow,
+                       color: Colors.black,
                       // margin: EdgeInsets.all(50),
                       padding: EdgeInsets.all(10),
                       width: 700,
@@ -119,15 +120,15 @@ class _page1State extends State<page1> {
                                   AssetImage("images/sleepygirl.gif"),
                             ),
                           ),
-                          SizedBox(height: 20),
+                          SizedBox(height: 10),
                           TypewriterAnimatedTextKit(
                             speed: Duration(milliseconds: 100),
-                            totalRepeatCount: 4,
+                            totalRepeatCount: 3,
                             text: [
-                              "I'm a developer",
-                              "I'm a Cloud Enthusisath",
+                              "I'm a Developer",
+                              "I'm a Cloud Enthusiast",
                               "I'm currently exploring DevOps tools",
-                              "I have quite a interest in automation"
+                            //  "I have quite a interest in automation"
                             ],
                             textStyle: TextStyle(
                                 color: Colors.pink[100],
