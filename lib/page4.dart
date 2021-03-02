@@ -74,8 +74,10 @@ class _page4State extends State<page4> with SingleTickerProviderStateMixin {
                         
                       )),
                   Container(
-                    color: Colors.black,
+                   // color: Colors.black,
                     height: 450,
+                    
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.purple[200],),
                     child: SingleChildScrollView(
                       padding: EdgeInsets.all(10),
                                       child: Wrap(

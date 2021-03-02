@@ -27,7 +27,7 @@ class _skillState extends State<skill> {
             },
             onHover: (k) {
               setState(() {
-                colour2 = Colors.teal;
+                colour2 = Colors.black;
               });
             },
             child: Container(
@@ -37,7 +37,7 @@ class _skillState extends State<skill> {
                   color: colour2, borderRadius: BorderRadius.circular(20)),
               child: Text(
                 widget.main_skill_name,
-                style: TextStyle(fontSize: 20, color: Colors.white),
+                style: TextStyle(fontSize: 20, color: Colors.white)
               ),
             ),
           ),

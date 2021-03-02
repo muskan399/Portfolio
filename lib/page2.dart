@@ -40,6 +40,7 @@ class _page2State extends State<page2> {
                       style: TextStyle(fontSize: 30, color: Colors.white)))),
           Container(
             
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.teal[800],),
             height: 400,
             //clipBehavior: Clip.hardEdge,
              // color: Colors.blue,
