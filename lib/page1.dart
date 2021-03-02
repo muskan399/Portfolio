@@ -11,13 +11,16 @@ class page1 extends StatefulWidget {
 class _page1State extends State<page1> {
   @override
   Widget build(BuildContext context) {
+
     
     return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
       child: Container(
           child: Stack(children: [
         for (var i in l) i,
         Center(
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -54,8 +57,7 @@ class _page1State extends State<page1> {
                             Container(
                                 height: 60,
                                 width: 60,
-                                child: Image.network(
-                                    "https://raw.githubusercontent.com/muskan399/first/master/hiii.gif"))
+                                child: Image.network("https://raw.githubusercontent.com/muskan399/first/master/hiii.gif"))
                           ],
                         ),
                         Container(

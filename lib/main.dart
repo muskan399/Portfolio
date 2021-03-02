@@ -16,8 +16,9 @@ class _MyappState extends State<Myapp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        
         debugShowCheckedModeBanner: false,
-        title: 'Infirmary Web',
+        title: 'Muskan Modi',
         theme: ThemeData(
           fontFamily: 'RobotoMono',
           // This is the theme of your application.

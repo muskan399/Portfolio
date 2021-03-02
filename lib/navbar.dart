@@ -8,6 +8,7 @@ AppBar navbar() {
     actions: [
       InkWell(
         onTap: () {
+          //_controller.forward(from: 0.5);
           controller.animateToPage(0,
               duration: Duration(microseconds: 100), curve: Curves.bounceIn);
         },

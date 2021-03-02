@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'dart:math';
-
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
@@ -94,14 +93,16 @@ class _Change_InfoState extends State<Change_Info>
 
     return Scaffold(
         backgroundColor: Colors.black,
-        appBar: MediaQuery.of(context).size.width >= 900
+        appBar: ((MediaQuery.of(context).size.width) >= 900  )
             ? navbar()
             : AppBar(backgroundColor: Colors.black),
-        drawer: MediaQuery.of(context).size.width < 900 ? drawer() : null,
-        body: PageView(
-            controller: controller,
-            scrollDirection: Axis.vertical,
-            children: [page1(), page2(), page3(), page4(), page5()]));
+        drawer: (MediaQuery.of(context).size.width < 900 && (MediaQuery.of(context).size.height) >= 600 )? drawer() : null,
+        body: MediaQuery.of(context).size.width>600?PageView(    controller: controller,
+        scrollDirection: Axis.vertical,
+        children:  [page1(), page2(), page3(), page4(), page5()]):ListView(
+        controller: controller,
+        scrollDirection: Axis.vertical,
+        children:  [page1(), page2(), page3(), page4(), page5()]));
   }
 }
 

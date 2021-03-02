@@ -127,16 +127,21 @@ class _page3State extends State<page3> {
         ),
       ),
     ];
-    return SingleChildScrollView(
-      child: MediaQuery.of(context).size.width < 900
-          ? Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: w,
-            )
-          : Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: w,
-            ),
+    return Container(
+      height: 600,
+      child: SingleChildScrollView(
+        
+        physics: BouncingScrollPhysics(),
+        child: MediaQuery.of(context).size.width < 900
+            ? Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: w,
+              )
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: w,
+              ),
+      ),
     );
   }
 }

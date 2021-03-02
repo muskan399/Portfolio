@@ -23,7 +23,7 @@ class _page5State extends State<page5> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     _controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 3));
+        AnimationController(vsync: this, duration: Duration(seconds: 5));
     animation = CurvedAnimation(parent: _controller, curve: Curves.easeOut);
     animation.addListener(() {
       setState(() {
@@ -53,7 +53,7 @@ class _page5State extends State<page5> with SingleTickerProviderStateMixin {
                 //color: Colors.purple[100],
                 width: 350 * animation.value,
                 height: 400,
-                margin: EdgeInsets.all(10),
+                margin: EdgeInsets.all(20),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     color: Colors.teal[900],
